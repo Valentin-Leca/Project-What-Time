@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <header class="row row-title no-gutter">
+            <div class="col-8-offset-2 d-flex justify-content-center">
+                <h1>What Time ?</h1>
+            </div>
+        </header>
+
+        <div class="row row-clock-img no-gutter">
+            <div class="col-12 clock-img"></div>
+        </div>
+
+        <section class="row no-gutter">
+            <div class="col-4-offset-4 d-flex justify-content-center">
+                <h2 class="mt-3 mb-3">Need to know what time is it in this city ?</h2>
+            </div>
+        </section>
+
+        <section class="row no-gutter">
+            <form method="post" action="{{ path('city') }}">
+                <div class="col-4-offset-4 d-flex justify-content-center mb-3">
+                    <label for="address"></label>
+                    <input type="search" id="address" name="address" class="form-control ap-input"
+                           placeholder="Step 1 : Please, search and select a city" required/>
+                </div>
+
+                <div class="button d-flex justify-content-center mb-5">
+                    <button type="submit" class="btn btn-primary">Step 2 : Click here !</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <div class="col-4-offset-4 d-flex justify-content-center">
+                {% if finalTime is defined %}
+                    <p class="time-display">At this moment, it is <span class="underline">{{ finalTime }}</span>{{ finalZone }}</p>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+
+{% endblock body %}
+
+
