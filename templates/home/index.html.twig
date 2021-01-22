@@ -36,6 +36,8 @@
             <div class="col-4-offset-4 d-flex justify-content-center">
                 {% if finalTime is defined %}
                     <p class="time-display">At this moment, it is <span class="underline">{{ finalTime }}</span>{{ finalZone }}</p>
+                    {% elseif errorTimezone is defined %}
+                    <p class="time-display">{{ errorTimezone }}</p>
                 {% endif %}
             </div>
         </section>

@@ -29,12 +29,9 @@ class CityController extends AbstractController {
             var_dump(curl_error($curl));
         } elseif ($date = true) {
             $data = json_decode($data, true);
-            $cityTimeZone = $data['timezone'];
-        } if ($data['timezone'] === false ) {
-            echo "lol";
-
-        } if (isset($cityTimeZone)) {
+        } if (isset($data['timezone'])) {
 //            Convert seconds time zone in hour(s)
+            $cityTimeZone = $data['timezone'];
             $shiftInHour = $cityTimeZone / 60 / 60;
 
 //            use php function date_parse to get hour(s), minute(s) and second(s) separatly.
@@ -63,6 +60,9 @@ class CityController extends AbstractController {
             }
             $finalTime = $hour .":" . $minute . ":" . $seconds;
             $finalZone = " at " . $cityName . " in" . $countryName;
+        } elseif (!isset($data['timezone'])) {
+            $errorTimezone = "An error was occured, please try again with another city or another one near the one you searched.";
+            return $this->render('home/index.html.twig', compact('errorTimezone'));
         } else {
             echo "an error was occured, please try again with another city near the one you searched";
         }
