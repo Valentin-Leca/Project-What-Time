@@ -1,0 +1,104 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.row-title {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.row-title h1 {
+    font-size: 5vh;
+}
+
+.clock-img {
+    background-image: url("../img/clock.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 50vh;
+}
+
+.time-display {
+    font-size : 1.7em;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.ap-input-icon {
+    display: none;
+}
+
+.ap-input {
+    width: 50%;
+    margin-left: 25%;
+    padding: 1.5rem;
+}
+
+.form-control {
+    border : 2px solid #ced4da;
+}
+
+@media screen and (max-width : 768px) {
+    .ap-input {
+        width: 75%;
+        margin-left: 12.5%;
+        padding: 1.5rem;
+    }
+
+    .time-display {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width : 550px) {
+    input::placeholder {
+        font-size: 0.8em;
+    }
+}
+
+
+@media screen and (max-width : 480px) {
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .time-display {
+        font-size: 1em;
+    }
+
+    input::placeholder {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width : 375px) {
+    h2 {
+        font-size: 1em;
+    }
+
+    .time-display {
+        font-size: 0.85em;
+    }
+
+    input::placeholder {
+        font-size: 0.55em;
+    }
+}
